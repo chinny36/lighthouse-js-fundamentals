@@ -1,10 +1,17 @@
-function isOdd(num) {
-  if (num % 2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+const stations = [
+  ['Big Bear Donair', 10, 'restaurant'],
+  ['Bright Lights Elementary', 50, 'school'],
+  ['Moose Mountain Community Centre', 45, 'community centre']
+];
 
-console.log(isOdd(240));
-console.log(isOdd(69));
+const chooseStations = function (stations) {
+  let goodStations = [];
+  for (let i = 0; i < stations.length; i++) {
+    if (stations[i][1] > 20 && (stations[i][2] === 'school' || stations[i][2] === 'community centre')) {
+      goodStations.push(stations[i][0]);
+    }
+  }
+  return goodStations;
+};
+
+console.log(chooseStations(stations));
